@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>游戏详情 · 约会大作战</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%238c7dff'/%3E%3Cstop offset='1' stop-color='%23ff7999'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='18' fill='%23090816'/%3E%3Cpath d='M14 33c8-14 18-21 31-20-8 5-11 10-10 15 6-3 12-2 15 1-5 2-9 6-13 12-4 5-11 10-23 12 4-6 5-13 0-20Z' fill='url(%23g)'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="assets/app.css?v=20260529a" />
+</head>
+<body data-page="game">
+  <div class="shell">
+    <div class="topbar">
+      <a class="brand" id="gameBackLink" href="games.html">返回小游戏区</a>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <button class="btn" id="soundToggle" data-state="off" hidden aria-hidden="true">音效：关</button>
+      </div>
+    </div>
+    <section class="panel game-stage-panel" id="gamePage">
+      <div class="game-stage-head">
+        <div class="game-stage-copy">
+          <div class="badge" id="gameBadge">小游戏</div>
+          <h1 id="gameTitle">命运选择器</h1>
+          <p class="subtitle" id="gameSummary">在不同精灵之间做选择，推进好感与剧情倾向。</p>
+        </div>
+        <div class="hero-actions">
+          <button class="btn" type="button" id="openRules">游戏规则</button>
+        </div>
+      </div>
+      <div class="panel game-stage-board" id="gameBoard"></div>
+    </section>
+  </div>
+  <div class="modal-shell" id="rulesModal" hidden>
+    <div class="modal-card">
+      <button class="modal-close" type="button" data-close-modal="rulesModal" aria-label="关闭">×</button>
+      <div class="detail-top">
+        <h3 id="rulesTitle">游戏规则</h3>
+        <span class="tag">规则说明</span>
+      </div>
+      <ul class="info-list" id="gameRules"></ul>
+    </div>
+  </div>
+  <div class="modal-shell" id="resultModal" hidden>
+    <div class="modal-card">
+      <button class="modal-close" type="button" data-close-modal="resultModal" aria-label="关闭">×</button>
+      <div class="detail-top">
+        <h3 id="resultTitle">结果</h3>
+        <span class="tag">结果展示</span>
+      </div>
+      <div class="modal-result" id="resultBody"></div>
+    </div>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="assets/characters.js?v=20260529a"></script>
+  <script src="assets/app.js?v=20260529a"></script>
+</body>
+</html>

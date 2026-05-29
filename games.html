@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>小游戏区 · 约会大作战</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%238c7dff'/%3E%3Cstop offset='1' stop-color='%23ff7999'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='18' fill='%23090816'/%3E%3Cpath d='M14 33c8-14 18-21 31-20-8 5-11 10-10 15 6-3 12-2 15 1-5 2-9 6-13 12-4 5-11 10-23 12 4-6 5-13 0-20Z' fill='url(%23g)'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="assets/app.css?v=20260529a" />
+</head>
+<body data-page="games" data-default-character="yoshino">
+  <div class="shell">
+    <div class="topbar">
+      <a class="brand" id="gamesBackLink" href="index.html">返回首页</a>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <button class="btn" id="soundToggle" data-state="off" hidden aria-hidden="true">音效：关</button>
+      </div>
+    </div>
+    <section class="panel">
+      <h1 id="gamesHubTitle">小游戏区</h1>
+      <p class="lead" id="gamesHubLead">命运的指针、天使的节奏与图鉴的微光，都会在这一夜给出不同的回应。</p>
+      <div class="games" id="gameGrid"></div>
+    </section>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="assets/characters.js?v=20260529a"></script>
+  <script src="assets/app.js?v=20260529a"></script>
+</body>
+</html>

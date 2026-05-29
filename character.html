@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>角色详情 · 约会大作战</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop stop-color='%238c7dff'/%3E%3Cstop offset='1' stop-color='%23ff7999'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='18' fill='%23090816'/%3E%3Cpath d='M14 33c8-14 18-21 31-20-8 5-11 10-10 15 6-3 12-2 15 1-5 2-9 6-13 12-4 5-11 10-23 12 4-6 5-13 0-20Z' fill='url(%23g)'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="assets/app.css?v=20260529a" />
+</head>
+<body data-page="character">
+  <div class="shell">
+    <div class="topbar">
+      <a class="brand" id="characterBackLink" href="archive.html">返回档案页</a>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <button class="btn" id="cycleRole">切换角色</button>
+        <button class="btn" id="soundToggle" data-state="off" hidden aria-hidden="true">音效：关</button>
+      </div>
+    </div>
+    <section class="panel character-stage" id="characterPage">
+      <header class="character-wiki-hero">
+        <div class="character-wiki-hero__copy">
+          <div class="badge" id="heroBadge">角色词条</div>
+          <div class="character-title-block">
+            <p class="character-kicker" id="characterCodenameLine">Nightmare / 时之梦魇</p>
+            <h1 id="characterName">时崎狂三</h1>
+            <p class="subtitle" id="characterProfile">时间能力与复杂立场让她始终游走在战局中心。</p>
+          </div>
+          <div class="hero-actions character-meta-row" id="characterMeta">
+            <span class="tag">时之梦魇</span>
+            <span class="tag">刻刻帝</span>
+            <span class="tag">6月10日</span>
+          </div>
+        </div>
+      </header>
+      <div class="character-wiki-layout">
+        <article class="character-wiki-main">
+          <section class="wiki-section">
+            <h2 id="sectionOverviewTitle">角色概述</h2>
+            <div class="wiki-paragraphs" id="characterLead">
+              <p>每位精灵都在战斗、日常与情感之间留下了独一无二的轨迹。</p>
+            </div>
+          </section>
+          <section class="wiki-section">
+            <h2 id="sectionStoryTitle">剧情定位</h2>
+            <div class="wiki-story-list" id="characterStoryFocus"></div>
+          </section>
+          <section class="wiki-section">
+            <h2 id="sectionFormsTitle">能力与形态</h2>
+            <div class="wiki-stack" id="characterFormsDetail"></div>
+            <div class="wiki-tag-panel wiki-tag-panel--forms" id="characterOtherForms"></div>
+          </section>
+          <section class="wiki-section">
+            <h2 id="sectionPersonalityTitle">性格与关键词</h2>
+            <div class="chip-cloud wiki-chip-cloud" id="characterPersonality"></div>
+          </section>
+          <section class="wiki-section">
+            <h2 id="sectionRelationsTitle">相关关系</h2>
+            <ul class="info-list wiki-list" id="characterRelationships"></ul>
+          </section>
+          <section class="wiki-section">
+            <h2 id="sectionTriviaTitle">设定与轶事</h2>
+            <ul class="info-list wiki-list" id="characterTrivia"></ul>
+          </section>
+        </article>
+        <aside class="character-wiki-side">
+          <section class="character-infobox">
+            <div class="character-infobox__visual hero-art character-art" id="characterArt">
+              <img class="hero-figure" id="heroFigure" src="assets/characters/kurumi.png" alt="角色立绘" />
+            </div>
+            <div class="character-infobox__section">
+              <h3 id="infoboxProfileTitle">基本资料</h3>
+              <dl class="wiki-infobox-list" id="characterProfileList"></dl>
+            </div>
+            <div class="character-infobox__section">
+              <h3 id="infoboxFormsTitle">代表形态</h3>
+              <div class="wiki-tag-panel wiki-tag-panel--forms" id="characterFormsChips"></div>
+            </div>
+            <div class="character-infobox__section">
+              <h3 id="infoboxDetailTitle">角色印象</h3>
+              <div class="wiki-note-box" id="characterDetail"></div>
+            </div>
+            <div class="character-infobox__section">
+              <h3 id="infoboxQuoteTitle">代表台词</h3>
+              <blockquote class="wiki-quote" id="characterQuote">时间的沙漏已经倾斜了哦，要和我一起看看结局吗？</blockquote>
+            </div>
+            <div class="character-infobox__section">
+              <h3 id="infoboxSourceTitle">资料来源</h3>
+              <div class="character-source-note" id="characterSource">Date A Live Wiki 与动画公开设定</div>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </section>
+  </div>
+
+  <aside class="pet" id="petDock">
+    <div class="pet-wrap themed-pet">
+      <div class="pet-head">
+        <div class="pet-avatar"><img id="petAvatar" src="assets/characters/kurumi.png" alt="页宠角色图" /></div>
+        <div class="pet-info">
+          <div class="pet-name" id="petName">时崎狂三</div>
+          <div class="pet-role" id="petRole">时之精灵 · 神秘华丽</div>
+        </div>
+      </div>
+      <div class="bubble" id="petBubble">时间的沙漏已经倾斜了哦，要和我一起看看结局吗？</div>
+      <div class="pet-meta">
+        <span class="pet-chip" id="petAbilityChip">刻刻帝</span>
+        <span class="pet-chip" id="petMood">待机中</span>
+        <span class="pet-chip" id="petModeChip">角色页宠</span>
+      </div>
+      <div class="pet-actions">
+        <button class="pet-mini-btn" id="petWaveBtn" type="button" data-say="wave">打招呼</button>
+        <button class="pet-mini-btn" id="petQuoteBtn" type="button" data-say="quote">说台词</button>
+        <button class="pet-mini-btn" id="petSwitchBtn" type="button" data-say="switch">换角色</button>
+      </div>
+    </div>
+  </aside>
+  <div class="toast" id="toast"></div>
+  <script src="assets/characters.js?v=20260529a"></script>
+  <script src="assets/app.js?v=20260529a"></script>
+</body>
+</html>
