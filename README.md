@@ -5,10 +5,8 @@
 
 ## 在线预览地址（重要重要！！）
 
-示例格式：
-
 ```text
-https://your-name.github.io/your-repo-name/
+https://sakanaovonya.github.io/DATE_A_LIVE_kurumiovo/
 ```
 
 ## 网页特点🐱
