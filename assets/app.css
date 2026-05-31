@@ -3778,6 +3778,91 @@ body.modal-open {
     min-height: 420px;
     border-radius: 24px;
   }
+  .flip-card-play .play-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .flip-card-play .play-actions .btn:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+  .flip-stage__single-card {
+    width: min(100%, 340px);
+    aspect-ratio: auto;
+    min-height: 520px;
+  }
+  .flip-stage--revealed-static {
+    padding: 18px 12px;
+  }
+  .flip-stage--revealed-static .flip-card-front {
+    display: grid;
+    grid-template-rows: auto minmax(190px, 1fr) auto;
+    gap: 12px;
+    padding: 16px;
+  }
+  .flip-stage--revealed-static .flip-card-front::before,
+  .flip-stage--revealed-static .flip-card-front__foil,
+  .flip-stage--revealed-static .flip-card-front__halo,
+  .flip-stage--revealed-static .flip-card-front__frame {
+    inset: auto;
+  }
+  .flip-stage--revealed-static .flip-card-front__namebar,
+  .flip-stage--revealed-static .flip-card-front__artframe,
+  .flip-stage--revealed-static .flip-card-front__lore {
+    position: relative;
+    inset: auto;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+  }
+  .flip-stage--revealed-static .flip-card-front__namebar {
+    padding: 12px;
+    border-radius: 16px;
+    gap: 10px;
+  }
+  .flip-stage--revealed-static .flip-card-front__name {
+    font-size: clamp(1.3rem, 7vw, 1.8rem);
+  }
+  .flip-stage--revealed-static .flip-card-front__angel {
+    max-width: 112px;
+    padding: 8px 10px;
+    font-size: 0.76rem;
+  }
+  .flip-stage--revealed-static .flip-card-front__artframe {
+    min-height: 210px;
+    height: 100%;
+    border-radius: 20px;
+  }
+  .flip-stage--revealed-static .flip-card-front__bg,
+  .flip-stage--revealed-static .flip-card-front__artglow,
+  .flip-stage--revealed-static .flip-card-front__figure-wrap {
+    position: absolute;
+  }
+  .flip-stage--revealed-static .flip-card-front__figure-wrap {
+    inset: 12px 14px 8px;
+  }
+  .flip-stage--revealed-static .flip-card-front__figure {
+    max-width: 86%;
+    max-height: 100%;
+  }
+  .flip-stage--revealed-static .flip-card-front__lore {
+    gap: 10px;
+    padding: 12px 14px 14px;
+    border-radius: 18px;
+  }
+  .flip-stage--revealed-static .flip-card-front__statusrow {
+    align-items: flex-start;
+  }
+  .flip-stage--revealed-static .flip-card-front__note {
+    width: 100%;
+    text-align: left;
+  }
+  .flip-stage--revealed-static .flip-card-front__caption {
+    -webkit-line-clamp: 4;
+    font-size: 0.96rem;
+    line-height: 1.72;
+  }
   .modal-shell,
   #resultModal {
     padding: 12px;
@@ -3890,6 +3975,30 @@ body.modal-open {
   .flip-stage__card,
   .flip-stage__single-card {
     width: min(280px, 100%);
+  }
+  .flip-card-play .play-actions {
+    grid-template-columns: 1fr;
+  }
+  .flip-stage--revealed-static {
+    padding: 14px 8px;
+  }
+  .flip-stage--revealed-static .flip-card-front {
+    padding: 12px;
+    gap: 10px;
+  }
+  .flip-stage--revealed-static .flip-card-front__namebar {
+    grid-template-columns: 1fr;
+  }
+  .flip-stage--revealed-static .flip-card-front__angel {
+    max-width: 100%;
+    text-align: left;
+  }
+  .flip-stage--revealed-static .flip-card-front__artframe {
+    min-height: 180px;
+  }
+  .flip-stage--revealed-static .flip-card-front__caption {
+    -webkit-line-clamp: 3;
+    font-size: 0.92rem;
   }
   .character-infobox__visual {
     min-height: 280px;
