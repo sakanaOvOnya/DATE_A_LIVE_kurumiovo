@@ -866,8 +866,8 @@ window.DAL_GAMES = {
       en: "The ending is revealed after three choices",
       ja: "三回の選択のあとで結末が明かされる"
     },
-    thumb: "assets/game-art/1.avif",
-    cover: "assets/game-art/1.avif",
+    thumb: "assets/angel-bg/tohka-sandalphon.png",
+    cover: "assets/character-bg/official-tohka.png",
     summary: {
       zh: "把三轮约会选择慢慢走完之后，今晚真正会回应你的那位精灵才会现身。急着下结论没用，心意总要走到最后才看得清。",
       en: "Only after you finish all three date choices does tonight's true answer appear. There is no shortcut here. You only understand your feelings once you follow them to the end.",
@@ -1159,8 +1159,8 @@ window.DAL_GAMES = {
       en: "A three-phase resonance challenge",
       ja: "三段階の共鳴チャレンジ"
     },
-    thumb: "assets/game-art/2.avif",
-    cover: "assets/game-art/2.avif",
+    thumb: "assets/angel-bg/kurumi-zafkiel.jpg",
+    cover: "assets/character-bg/official-kurumi.png",
     summary: {
       zh: "这不是照着说明书按键的固定流程，而像是亲手陪某位精灵把失衡的灵波一点点稳下来。选好对象后，完成三段共鸣，她的天使才会真正安定展开。",
       en: "This is less like following a manual and more like staying beside a Spirit while her unstable wave settles down. Choose who you want to resonate with, complete the three phases, and her Angel will finally stabilize.",
@@ -1315,8 +1315,8 @@ window.DAL_GAMES = {
       en: "Tap the deck and reveal the Spirit answering tonight",
       ja: "デッキに触れて今夜応えてくれる精霊をめくる"
     },
-    thumb: "assets/game-art/3.avif",
-    cover: "assets/game-art/3.avif",
+    thumb: "assets/card-flip/deck-pool.png",
+    cover: "assets/character-bg/official-mio.png",
     summary: {
       zh: "轻点牌池后，卡牌会在舞台中央从背面翻到正面。翻出的精灵会直接收入图鉴，再次相遇时也会把她重新带回你的手中。",
       en: "A light tap starts the draw, and the card flips from its back to the front at center stage. Revealed Spirits are added to your gallery and can return to your hand on later draws.",
