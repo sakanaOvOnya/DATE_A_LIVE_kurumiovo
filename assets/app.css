@@ -2114,7 +2114,7 @@ body[data-mode="day"] .game-stage-panel::before {
 .modal-shell {
   position: fixed;
   inset: 0;
-  z-index: 90;
+  z-index: 140;
   display: grid;
   place-items: center;
   padding: 24px;
@@ -2123,6 +2123,8 @@ body[data-mode="day"] .game-stage-panel::before {
     radial-gradient(circle at 78% 18%, rgba(255, 196, 224, 0.12), transparent 22%),
     rgba(3, 4, 12, 0.7);
   backdrop-filter: blur(14px);
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 .modal-shell[hidden] {
   display: none !important;
@@ -2132,6 +2134,7 @@ body[data-mode="day"] .game-stage-panel::before {
   overflow-y: auto;
   overflow-x: hidden;
   padding: 24px;
+  -webkit-overflow-scrolling: touch;
 }
 .modal-card {
   --modal-accent: #8c7dff;
@@ -2148,6 +2151,7 @@ body[data-mode="day"] .game-stage-panel::before {
   box-shadow: var(--shadow);
   isolation: isolate;
   scrollbar-width: none;
+  will-change: transform;
 }
 #resultModal .modal-card {
   max-height: none;
@@ -2228,6 +2232,7 @@ body[data-mode="day"] .game-stage-panel::before {
   cursor: pointer;
   font-size: 1.25rem;
   box-shadow: 0 12px 24px rgba(6, 10, 28, 0.18);
+  z-index: 5;
 }
 .modal-close:hover {
   background: linear-gradient(135deg, rgba(255,255,255,0.22), rgba(255,255,255,0.08));
@@ -3397,6 +3402,8 @@ body[data-mode="day"] .flip-card-front__status {
 }
 body.modal-open {
   overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: none;
 }
 
 .pet {
@@ -3867,22 +3874,84 @@ body.modal-open {
   #resultModal {
     padding: 12px;
   }
+  .modal-shell {
+    overflow-y: auto;
+    overflow-x: hidden;
+    backdrop-filter: none;
+    background:
+      radial-gradient(circle at top, rgba(166, 187, 255, 0.16), transparent 30%),
+      linear-gradient(180deg, rgba(7, 10, 24, 0.84), rgba(9, 13, 30, 0.78) 36%, rgba(10, 14, 34, 0.82)),
+      rgba(3, 4, 12, 0.8);
+  }
   .modal-card {
     width: min(100vw - 16px, 720px);
     max-height: min(88dvh, 860px);
+    max-height: none;
+    overflow: visible;
     padding: 20px 16px 18px;
     border-radius: 24px;
+    border-color: rgba(255,255,255,0.14);
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.05) 20%, rgba(255,255,255,0.03) 100%),
+      rgba(29, 36, 77, 0.96);
+    box-shadow:
+      0 16px 32px rgba(7, 10, 24, 0.24),
+      0 2px 0 rgba(255,255,255,0.06) inset;
+  }
+  .modal-card::before {
+    inset: 8px;
+    border-radius: 18px;
+    border-color: rgba(255,255,255,0.08);
+  }
+  .modal-card::after {
+    animation: none;
+    box-shadow:
+      0 0 10px color-mix(in srgb, var(--modal-soft) 22%, transparent),
+      0 0 18px color-mix(in srgb, var(--modal-accent) 10%, transparent);
+    opacity: 0.72;
   }
   .modal-shell .detail-top {
     padding: 14px;
     padding-right: 48px;
     border-radius: 18px;
+    z-index: 1;
+    background:
+      linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.05)),
+      color-mix(in srgb, var(--modal-accent) 8%, rgba(18, 24, 52, 0.6));
+    border-color: rgba(255,255,255,0.14);
+    box-shadow:
+      0 10px 20px rgba(6, 10, 24, 0.14),
+      inset 0 1px 0 rgba(255,255,255,0.08);
+  }
+  .modal-shell .detail-top .tag,
+  .result-kicker,
+  .result-frame__tag {
+    box-shadow: none;
+  }
+  .modal-shell .info-list {
+    gap: 12px;
+    padding: 4px 4px 0 18px;
+  }
+  .modal-shell .info-list li {
+    padding: 14px 14px 14px 8px;
+    border-radius: 18px;
+    background:
+      linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03)),
+      rgba(21, 28, 60, 0.56);
+    border-color: rgba(255,255,255,0.08);
+    box-shadow:
+      0 8px 18px rgba(7, 10, 24, 0.08),
+      inset 0 1px 0 rgba(255,255,255,0.04);
   }
   .modal-close {
     top: 10px;
     right: 10px;
     width: 38px;
     height: 38px;
+    background:
+      linear-gradient(135deg, rgba(255,255,255,0.2), rgba(255,255,255,0.06)),
+      rgba(17, 24, 54, 0.68);
+    box-shadow: 0 10px 18px rgba(6, 10, 24, 0.18);
   }
   .result-scene {
     min-height: 420px;
@@ -3900,6 +3969,31 @@ body.modal-open {
   .result-frame {
     padding: 12px 14px;
     border-radius: 18px;
+  }
+  .result-nameplate,
+  .result-highlight,
+  .result-frame,
+  .modal-shell .detail-top,
+  .modal-shell .info-list li {
+    backdrop-filter: none;
+  }
+  .result-nameplate {
+    background:
+      linear-gradient(135deg, color-mix(in srgb, var(--scene-accent) 18%, rgba(12, 15, 34, 0.9)), rgba(11, 15, 34, 0.78)),
+      rgba(11, 15, 34, 0.82);
+    box-shadow:
+      0 12px 22px rgba(8, 10, 24, 0.18),
+      inset 0 1px 0 rgba(255,255,255,0.06);
+  }
+  .result-highlight,
+  .result-frame {
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03)),
+      rgba(20, 25, 54, 0.52);
+    border-color: rgba(255,255,255,0.08);
+    box-shadow:
+      0 8px 18px rgba(8, 10, 24, 0.08),
+      inset 0 1px 0 rgba(255,255,255,0.04);
   }
   .pet-wrap {
     padding: 14px;
@@ -3999,6 +4093,20 @@ body.modal-open {
   .flip-stage--revealed-static .flip-card-front__caption {
     -webkit-line-clamp: 3;
     font-size: 0.92rem;
+  }
+  .modal-card::before,
+  .modal-card::after {
+    display: none;
+  }
+  .modal-card {
+    padding: 18px 14px 16px;
+    border-radius: 20px;
+  }
+  .modal-shell .detail-top,
+  .result-nameplate,
+  .result-highlight,
+  .result-frame {
+    border-radius: 16px;
   }
   .character-infobox__visual {
     min-height: 280px;
